@@ -20,4 +20,5 @@ You can find out the macOS Keycodes by searching the web or searching this file 
 ```
 
 ## Creating the launcher application
+#### WARNING: This requires the executable to be in your path.
 To create the launcher application run `sh launcher/CreateApp.sh`. You can then add it to your login items if you want.
