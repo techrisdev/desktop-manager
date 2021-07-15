@@ -18,3 +18,6 @@ You can find out the macOS Keycodes by searching the web or searching this file 
 ```
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/Headers/Events.h
 ```
+
+## Creating the launcher application
+To create the launcher application run `sh launcher/CreateApp.sh`. You can then add it to your login items if you want.
