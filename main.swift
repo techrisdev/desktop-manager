@@ -64,7 +64,11 @@ for item in items {
     let modifier = KeyboardShortcutModifier(rawValue: modifierString)!
     KeyboardShortcutManager(keyboardShortcut: KeyboardShortcut(key: Key(keyCode: keycode), modifiers: [modifier], events: [.keyDown])).startListeningForEvents { _ in
         let workspace = NSWorkspace.shared
-        workspace.frontmostApplication?.hide()
+        // Hide all applications
+        // TODO: DOESN'T WORK RIGHT NOW
+        //for app in workspace.runningApplications {
+        //    app.hide()
+        //}
         workspace.launchApplication(item.application)
     }
 }
