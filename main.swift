@@ -65,10 +65,11 @@ for item in items {
     KeyboardShortcutManager(keyboardShortcut: KeyboardShortcut(key: Key(keyCode: keycode), modifiers: [modifier], events: [.keyDown])).startListeningForEvents { _ in
         let workspace = NSWorkspace.shared
         // Hide all applications
-        // TODO: DOESN'T WORK RIGHT NOW
-        //for app in workspace.runningApplications {
-        //    app.hide()
-        //}
+        for app in workspace.runningApplications {
+            if app.localizedName != item.application {
+                app.hide()
+            } 
+        }
         workspace.launchApplication(item.application)
     }
 }
