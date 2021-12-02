@@ -65,16 +65,17 @@ for item in items {
     KeyboardShortcutManager(keyboardShortcut: KeyboardShortcut(key: Key(keyCode: keycode), modifiers: [modifier], events: [.keyDown])).startListeningForEvents { _ in
         let workspace = NSWorkspace.shared
         // Hide all applications
-        for app in workspace.runningApplications {
-            if app.localizedName != item.application {
+        // DISABLED!
+//        for app in workspace.runningApplications {
+ //           if app.localizedName != item.application {
                 // Completely quit my Terminal because it launches quickly anyways and does use some memory!
-                if app.localizedName == "Alacritty" {
-                    app.terminate()
-                }
-                app.hide()
-            } 
-        }
-        usleep(2000)
+ //               if app.localizedName == "Alacritty" {
+  //                  app.terminate()
+   //             }
+    //            app.hide()
+     //       } 
+      //  }
+       // usleep(2000)
         workspace.launchApplication(item.application)
     }
 }
